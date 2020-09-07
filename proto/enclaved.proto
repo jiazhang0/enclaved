@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package enclaved_proto;
+
+service Enclaved {
+  rpc InitiateChallenge (AttestChallenge) returns (AttestResponse) {}
+}
+
+message AttestChallenge {
+  bytes nonce = 1;
+}
+
+message AttestResponse {
+  bytes quote = 2;
+}
